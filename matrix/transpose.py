@@ -1,2 +1,2 @@
 def transpose(matrix):
-    pass
+    return [list(row) for row in zip(*matrix)]
