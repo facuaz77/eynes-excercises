@@ -1,12 +1,11 @@
 import math
 
-
 class Circle:
     def __init__(self, radius):
         if radius <= 0:
             raise ValueError("El valor del radio no debe ser menor o igual a 0")
         self.radius = radius
-       
+
     def get_radius(self):
         return self.radius
 
@@ -22,16 +21,17 @@ class Circle:
         return 2 * math.pi * self.radius
 
     def __mul__(self, n):
+        if n <= 0:
+            raise ValueError("El factor de multiplicación debe ser mayor que 0")
         return Circle(self.radius * n)
 
     def __str__(self):
         return f"El radio del circulo es: {self.radius:.2f}"
 
+if __name__ == '__main__':
+    circle_value = float(input("Ingrese el radio del círculo: "))
+    c = Circle(circle_value)
 
-circle_value = float(input("Ingrese el radio del círculo: "))
-c = Circle(circle_value)
-
-print(c)
-print(f"Área: {c.get_area():.2f}")
-print(f"Perímetro: {c.get_perimeter():.2f}")
-
+    print(c)
+    print(f"Área: {c.get_area():.2f}")
+    print(f"Perímetro: {c.get_perimeter():.2f}")
