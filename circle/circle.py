@@ -34,3 +34,4 @@ c = Circle(circle_value)
 print(c)
 print(f"Área: {c.get_area():.2f}")
 print(f"Perímetro: {c.get_perimeter():.2f}")
+
